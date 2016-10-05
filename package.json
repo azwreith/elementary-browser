@@ -1,0 +1,23 @@
+{
+  "name": "elementary-browser",
+  "version": "0.0.1",
+  "description": "A minimalistic browser built using Electron.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/azwreith/elementary-browser.git"
+  },
+  "keywords": [
+    "electron",
+    "browser"
+  ],
+  "author": "Ujjwal Arora <arora.ujjwal@gmail.com> (http://ujjwalarora.xyz)",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/azwreith/elementary-browser/issues"
+  },
+  "homepage": "https://github.com/azwreith/elementary-browser#readme"
+}
