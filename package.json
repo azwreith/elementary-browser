@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/azwreith/elementary-browser/issues"
   },
-  "homepage": "https://github.com/azwreith/elementary-browser#readme"
+  "homepage": "https://github.com/azwreith/elementary-browser#readme",
+  "devDependencies": {
+    "electron": "^1.4.2"
+  }
 }
