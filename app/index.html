@@ -3,7 +3,8 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Elementary Browser</title>
-		<link rel="stylesheet" href="elementary.css"/>
+		<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/> -->
+		<link rel="stylesheet" href="css/elementary.css"/>
 	</head>
 	<body>
 		<div id="container">
@@ -14,9 +15,10 @@
 				<!-- Tab Bar -->
 				<div id="tab-bar">
 					<ul id="tabs">
-						<li class="tab active">http://example.com</li>
-						<li class="tab">http://ujjwalarora.xyz</li>
+						<li class="tab active">Google</li>
+						<li class="tab">Yahoo</li>
 					</ul>
+					<i id="add-tab-button" class="fa fa-plus navbar-action-button" title="New Tab"></i>
 				</div>
 
 				<!-- Search Bar -->
@@ -30,12 +32,12 @@
 
 			</div>
 
-      <!-- View -->
+			<!-- View -->
 			<div id="views">
-				<webview class="view active" src="http://example.com"></webview>
+				<webview class="view" src="http://google.com"></webview>
 			</div>
 
 		</div>
-		<script src="js/render.js"></script>
+		<script src="js/renderer.js"></script>
 	</body>
 </html>
