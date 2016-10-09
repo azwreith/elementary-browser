@@ -1,0 +1,22 @@
+/* Web View */
+
+#views {
+  height: calc(100vh - 3.7em);
+  position: relative;
+}
+
+.view {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  position: absolute;
+  /*overflow: auto;*/
+  /*overflow: visible;*/
+  /*padding-bottom: 100%;*/
+  padding: 0;
+}
+
+.view .hidden {
+  display: flex;
+  visibility: hidden;
+}
