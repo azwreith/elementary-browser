@@ -1,13 +1,41 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Hello World!</title>
-  </head>
-  <body>
-    <h1>Hello World!</h1>
-    We are using node <script>document.write(process.versions.node)</script>,
-    Chrome <script>document.write(process.versions.chrome)</script>,
-    and Electron <script>document.write(process.versions.electron)</script>.
-  </body>
+	<head>
+		<meta charset="UTF-8">
+		<title>Elementary Browser</title>
+		<link rel="stylesheet" href="elementary.css"/>
+	</head>
+	<body>
+		<div id="container">
+
+			<!-- Top Nav -->
+			<div id="top-nav">
+
+				<!-- Tab Bar -->
+				<div id="tab-bar">
+					<ul id="tabs">
+						<li class="tab active">http://example.com</li>
+						<li class="tab">http://ujjwalarora.xyz</li>
+					</ul>
+				</div>
+
+				<!-- Search Bar -->
+				<div id="search-bar">
+					<button id="back"></button>
+					<button id="forward"></button>
+					<button id="refresh"></button>
+					<button id="home"></button>
+					<input id="search-input"/>
+				</div>
+
+			</div>
+
+      <!-- View -->
+			<div id="views">
+				<webview class="view active" src="http://example.com"></webview>
+			</div>
+
+		</div>
+		<script src="js/render.js"></script>
+	</body>
 </html>
