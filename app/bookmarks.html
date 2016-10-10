@@ -1,7 +1,10 @@
 <html>
 	<head>
 		<style type="text/css">
-			@import url('https://fonts.googleapis.com/css?family=Roboto');
+			@font-face {
+			    font-family: Roboto;
+			    src: url(fonts/Roboto.woff2);
+			}
 			body{
 				font-family: "Roboto";
 				background: #F4F4F4;
@@ -62,6 +65,14 @@
 				border-radius: 2px;
 				width: 8em;
 				height: 10em;
+
+			}
+
+			.bookmark:hover{
+				box-shadow: 0 0 10px 0 #aba9a9;
+			}
+			.main a{
+				text-decoration: none;
 			}
 			.thumbnail{
 
@@ -93,18 +104,17 @@
 				width: 80%;
 			}
 			.title{
-				margin: 2px;
 				position: relative;
 				font-size: .8em;
-				margin: 0;
 				line-height: 2em;
 				margin: auto;
 				width: 100%;
+				color: #2D2D2D;
 				top: -1.25em;
 				text-align: center;
-				text-overflow: ellipsis-word;
 				white-space: nowrap;
 				overflow: hidden;
+
 			}
 		</style>
 	</head>
@@ -117,222 +127,19 @@
 			<a href="#0">Two</a>
 			<a href="#0" id="selected">Three</a>
 			<a href="#0">Four</a>
-			<a href="#0">One</a>
-			<a href="#0">Two</a>
-			<a href="#0">Three</a>
-			<a href="#0">Four</a>
 		</nav>  
 		<div class="main">
-		<div class="bookmark">
-			<div class="thumbnail">
-				<img src="images/placeholder-thumbnail.jpg">
-			</div>
-			<div class="favicon">
-				<img src="images/google-favicon.png">
-			</div>
-			<div class="title">
-				Google, Alphabet
-			</div>
-		</div>
-		<div class="bookmark">
-			<div class="thumbnail">
-				<img src="images/placeholder-thumbnail.jpg">
-			</div>
-			<div class="favicon">
-				<img src="images/google-favicon.png">
-			</div>
-			<div class="title">
-				Google, Alphabet
-			</div>
-		</div>
-		<div class="bookmark">
-			<div class="thumbnail">
-				<img src="images/placeholder-thumbnail.jpg">
-			</div>
-			<div class="favicon">
-				<img src="images/google-favicon.png">
-			</div>
-			<div class="title">
-				Google, Alphabet
-			</div>
-		</div>
-		<div class="bookmark">
-			<div class="thumbnail">
-				<img src="images/placeholder-thumbnail.jpg">
-			</div>
-			<div class="favicon">
-				<img src="images/google-favicon.png">
-			</div>
-			<div class="title">
-				Google, Alphabet
-			</div>
-		</div>
-		<div class="bookmark">
-			<div class="thumbnail">
-				<img src="images/placeholder-thumbnail.jpg">
-			</div>
-			<div class="favicon">
-				<img src="images/google-favicon.png">
-			</div>
-			<div class="title">
-				Google, Alphabet
-			</div>
-		</div>
-		<div class="bookmark">
-			<div class="thumbnail">
-				<img src="images/placeholder-thumbnail.jpg">
-			</div>
-			<div class="favicon">
-				<img src="images/google-favicon.png">
-			</div>
-			<div class="title">
-				Google, Alphabet
-			</div>
-		</div>
-
-		<div class="bookmark">
-			<div class="thumbnail">
-				<img src="images/placeholder-thumbnail.jpg">
-			</div>
-			<div class="favicon">
-				<img src="images/google-favicon.png">
-			</div>
-			<div class="title">
-				Google, Alphabet
-			</div>
-		</div>
-		<div class="bookmark">
-			<div class="thumbnail">
-				<img src="images/placeholder-thumbnail.jpg">
-			</div>
-			<div class="favicon">
-				<img src="images/google-favicon.png">
-			</div>
-			<div class="title">
-				Google, Alphabet
-			</div>
-		</div>
-		<div class="bookmark">
-			<div class="thumbnail">
-				<img src="images/placeholder-thumbnail.jpg">
-			</div>
-			<div class="favicon">
-				<img src="images/google-favicon.png">
-			</div>
-			<div class="title">
-				Google, Alphabet
-			</div>
-		</div>
-		<div class="bookmark">
-			<div class="thumbnail">
-				<img src="images/placeholder-thumbnail.jpg">
-			</div>
-			<div class="favicon">
-				<img src="images/google-favicon.png">
-			</div>
-			<div class="title">
-				Google, Alphabet
-			</div>
-		</div>
-		<div class="bookmark">
-			<div class="thumbnail">
-				<img src="images/placeholder-thumbnail.jpg">
-			</div>
-			<div class="favicon">
-				<img src="images/google-favicon.png">
-			</div>
-			<div class="title">
-				Google, Alphabet
-			</div>
-		</div>
-		<div class="bookmark">
-			<div class="thumbnail">
-				<img src="images/placeholder-thumbnail.jpg">
-			</div>
-			<div class="favicon">
-				<img src="images/google-favicon.png">
-			</div>
-			<div class="title">
-				Google, Alphabet
-			</div>
-		</div>
-		<div class="bookmark">
-			<div class="thumbnail">
-				<img src="images/placeholder-thumbnail.jpg">
-			</div>
-			<div class="favicon">
-				<img src="images/google-favicon.png">
-			</div>
-			<div class="title">
-				Google, Alphabet
-			</div>
-		</div>
-		<div class="bookmark">
-			<div class="thumbnail">
-				<img src="images/placeholder-thumbnail.jpg">
-			</div>
-			<div class="favicon">
-				<img src="images/google-favicon.png">
-			</div>
-			<div class="title">
-				Google, Alphabet
-			</div>
-		</div>
-		<div class="bookmark">
-			<div class="thumbnail">
-				<img src="images/placeholder-thumbnail.jpg">
-			</div>
-			<div class="favicon">
-				<img src="images/google-favicon.png">
-			</div>
-			<div class="title">
-				Google, Alphabet
-			</div>
-		</div>
-		<div class="bookmark">
-			<div class="thumbnail">
-				<img src="images/placeholder-thumbnail.jpg">
-			</div>
-			<div class="favicon">
-				<img src="images/google-favicon.png">
-			</div>
-			<div class="title">
-				Google, Alphabet
-			</div>
-		</div>
-		<div class="bookmark">
-			<div class="thumbnail">
-				<img src="images/placeholder-thumbnail.jpg">
-			</div>
-			<div class="favicon">
-				<img src="images/google-favicon.png">
-			</div>
-			<div class="title">
-				Google, Alphabet
-			</div>
-		</div>
-		<div class="bookmark">
-			<div class="thumbnail">
-				<img src="images/placeholder-thumbnail.jpg">
-			</div>
-			<div class="favicon">
-				<img src="images/google-favicon.png">
-			</div>
-			<div class="title">
-				Google, Alphabet
-			</div>
-		</div>
-		<div class="bookmark">
-			<div class="thumbnail">
-				<img src="images/placeholder-thumbnail.jpg">
-			</div>
-			<div class="favicon">
-				<img src="images/google-favicon.png">
-			</div>
-			<div class="title">
-				Google, Alphabet
-			</div>
-		</div>
+			<a href="http://google.com" class="bookmark">
+				<div class="thumbnail">
+					<img src="images/placeholder-thumbnail.jpg">
+				</div>
+				<div class="favicon">
+					<img src="images/google-favicon.png">
+				</div>
+				<div class="title">
+					Google, Alphabet
+				</div>
+			</a>
 		</div>
 	</body>
 </html>
