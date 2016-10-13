@@ -2,7 +2,7 @@
 
 #tab-bar {
   display: flex;
-  height: 2.3em;
+  height: 3em;
   align-items: center;
   /*transition: 0.2s background-color;*/
   max-width: 100vw;
@@ -51,8 +51,8 @@
   transition: .15s min-width, 0.2s transform;
   padding: 0 1em;
   font-size: 0.8em;
-  line-height: 36px;
-  height: 36px;
+  line-height: 42px;
+  height: 42px;
   overflow: hidden;
   word-break: break-all;
   background-color: #eee;
@@ -70,10 +70,11 @@
   background-color: rgba(0, 0, 0, 0.1);
 }
 
-.tab .tab-icon-area {
+.tab .tab-icon {
   float: left;
   height: 1em;
-  margin: 0.6em 0.75em 0.6em 0.5em;
+  /*vertical-align: middle;*/
+  margin: 0.75em 0.75em 0.75em 0.75em;
   pointer-events: none;
 }
 
@@ -81,7 +82,7 @@
   display: none;
   float: right;
   font-size: 0.8em;
-  padding: 0 0.66em;
+  padding: 0 0.66em 0 0;
   line-height: 36px;
   height: 36px;
   vertical-align: middle;
@@ -94,10 +95,40 @@
 }
 
 .new-tab-button {
-  padding: 1em;
+  padding: 0 1.5em;
 }
-
 
 /*.new-tab-button + .new-tab-button {
 	padding-left: 0.5em;
 }*/
+
+#search-bar {
+  display: flex;
+  height: 3em;
+  align-items: center;
+  padding: 0 0 0 1em;
+  /*transition: 0.2s background-color;*/
+  max-width: 100vw;
+  position: relative;
+  outline: none;
+  background-color: rgba(255, 255, 255, 1);
+  cursor: default;
+  overflow: hidden;
+}
+
+#search-input {
+  flex: 1;
+  font-size: 0.8em;
+  line-height: 32px;
+  height: 32px;
+  overflow: hidden;
+  word-break: break-all;
+}
+
+.search-bar-button {
+  padding: 1em 1em 1em 0;
+}
+
+#settings-button {
+  padding: 1em;
+}
