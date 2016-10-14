@@ -20,9 +20,20 @@
 				font-size: 1.7em;
 				margin-bottom: .7em;
 			}
-			.setting{
+			.view{
+				margin-right: 1em;
+				cursor: pointer;
+				display: inline-block;
+				color: #999;
+				//margin-left: 1em;
+			}
+			#selected{
+				color: #333;
+			}
+			#setting{
 				margin-top: 1.1em;
 				width: 50vw;
+				display: none;
 			}
 			.heading{
 				font-size: 1.15em;
@@ -60,14 +71,47 @@
 				padding: 5px 2em 5px 0.5em;
 				float: right;	
 			}
+			#browsehistory{
+				margin-top: 1.1em;
+				width: 50vw;
+				list-style-type: none;
+				padding-left: 0;
+				font-size: .9em;
+				display: none;
+			}
+			.item{
+				margin-top: 5px;
+				margin-left: 1.8em;
+			}
+			.date{
+				font-size: 1.1em;
+				margin-left: .5em;
+				margin-top: 1em;
+				margin-bottom: .5em;
+			}
+			.time{
+				display: inline;
+				color: #999;
+			}
+			.link{
+				display: inline;
+				margin-left: 1.2em;
+				text-decoration: none;
+				color: #333;
+			}
 		</style>
 	</head>
 	<body onload="setDefaults()">
 		<header>
-			Settings	
+			<div class="settings view" id="settingTab" onclick="setVisible(this)"">
+				Settings
+			</div>
+			<div class="history view" id="browsehistoryTab" onclick="setVisible(this)">
+				History
+			</div>
 		</header>
 		<hr/>
-		<div class="setting">
+		<div id="setting">
 			<div class="heading">
 				<div class="switch" id="ad" onclick="toggleAdvert(this)">
 				</div>
@@ -97,11 +141,72 @@
 				</div>
 			</div>
 		</div>
+		<ul id="browsehistory">
+			<div class="date">
+				Today
+			</div>
+			<li class="item">
+				<div class="time">
+				3:30 PM
+				</div>
+				<a href="#" class="link">
+				https://adblock.com
+				</a>
+			</li>
+			<li class="item">
+				<div class="time">
+				3:30 PM
+				</div>
+				<a href="#" class="link">
+				https://adblock.com
+				</a>
+			</li>
+			<li class="item">
+				<div class="time">
+				3:30 PM
+				</div>
+				<a href="#" class="link">
+				https://adblock.com
+				</a>
+			</li>
+			<div class="date">
+				Yesterday
+			</div>
+			<li class="item">
+				<div class="time">
+				3:30 PM
+				</div>
+				<a href="#" class="link">
+				https://adblock.com
+				</a>
+			</li>
+			<li class="item">
+				<div class="time">
+				3:30 PM
+				</div>
+				<a href="#" class="link">
+				https://adblock.com
+				</a>
+			</li>
+			<li class="item">
+				<div class="time">
+				3:30 PM
+				</div>
+				<a href="#" class="link">
+				https://adblock.com
+				</a>
+			</li>
+
+		</ul>
 		<script type="text/javascript">
+			var previousSelection = "setting";
+
 			function setDefaults(){
 				detectTheme();
 				detectAdvert();
 				detectSearch();
+				document.getElementById(previousSelection).style.display = "block";
+				document.getElementById(previousSelection + "Tab").style.color = "#333";
 			}
 
 			function detectTheme(){
@@ -130,6 +235,16 @@
 				var search = "duckduckgo";
 				document.getElementById("search").value = search;
 			}
+
+			function setVisible(e){
+				var selected = e.id.replace("Tab", "");
+				document.getElementById(previousSelection).style.display = "none";
+				document.getElementById(previousSelection + "Tab").style.color = "#999";
+				document.getElementById(selected).style.display = "block";
+				document.getElementById(selected + "Tab").style.color = "#333";
+				previousSelection = selected;
+			}
+
 			function toggleAdvert(e){
 				console.log(e.innerHTML);
 				if(e.innerHTML == "On"){
