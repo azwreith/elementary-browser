@@ -69,7 +69,7 @@
 				font-size: .8em;
 				text-align: center;
 				padding: 5px 2em 5px 0.5em;
-				float: right;	
+				float: right;
 			}
 			#browsehistory{
 				margin-top: 1.1em;
@@ -94,7 +94,7 @@
 				color: #999;
 			}
 			.favicon{
-				height: .9em;
+				height: 1em;
 				display: inline-flex;
 				margin-right: 3px;
 				vertical-align: baseline;
@@ -116,7 +116,7 @@
 	</head>
 	<body onload="setDefaults()">
 		<header>
-			<div class="settings view" id="settingTab" onclick="setVisible(this)"">
+			<div class="settings view" id="settingTab" onclick="setVisible(this)">
 				Settings
 			</div>
 			<div class="history view" id="browsehistoryTab" onclick="setVisible(this)">
@@ -253,7 +253,7 @@
 				var currTheme = "light"; //TODO: Fixes & Default Values
 				document.getElementById('theme').value = currTheme;
 			}
-			
+
 			function detectAdvert(){
 				var e = document.getElementById("ad");
 				var isTurnedOn = true;
