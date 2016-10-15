@@ -93,6 +93,19 @@
 				display: inline;
 				color: #999;
 			}
+			.favicon{
+				height: .9em;
+				display: inline-flex;
+				margin-right: 3px;
+				vertical-align: baseline;
+			}
+			.url{
+				font-size: .9em;
+				color: #999;
+				display: inline-block;
+				margin-left: 5px;
+				cursor: default;
+			}
 			.link{
 				display: inline;
 				margin-left: 1.2em;
@@ -142,64 +155,91 @@
 			</div>
 		</div>
 		<ul id="browsehistory">
+			<div>
 			<div class="date">
 				Today
 			</div>
 			<li class="item">
 				<div class="time">
-				3:30 PM
+					3:30 PM
 				</div>
 				<a href="#" class="link">
-				https://adblock.com
+					<img src="images/google-favicon.png" class="favicon">
+					Google Search
 				</a>
+				<span class="url">
+					google.com
+				</span>
 			</li>
 			<li class="item">
 				<div class="time">
-				3:30 PM
+					3:30 PM
 				</div>
 				<a href="#" class="link">
-				https://adblock.com
+					<img src="images/google-favicon.png" class="favicon">
+					Google Search
 				</a>
+				<span class="url">
+					google.com
+				</span>
 			</li>
 			<li class="item">
 				<div class="time">
-				3:30 PM
+					3:30 PM
 				</div>
 				<a href="#" class="link">
-				https://adblock.com
+					<img src="images/google-favicon.png" class="favicon">
+					Google Search
 				</a>
+				<span class="url">
+					google.com
+				</span>
 			</li>
+			</div>
+			<div>
 			<div class="date">
 				Yesterday
 			</div>
 			<li class="item">
 				<div class="time">
-				3:30 PM
+					3:30 PM
 				</div>
 				<a href="#" class="link">
-				https://adblock.com
+					<img src="images/google-favicon.png" class="favicon">
+					Google Search
 				</a>
+				<span class="url">
+					google.com
+				</span>
 			</li>
 			<li class="item">
 				<div class="time">
-				3:30 PM
+					3:30 PM
 				</div>
 				<a href="#" class="link">
-				https://adblock.com
+					<img src="images/google-favicon.png" class="favicon">
+					Google Search
 				</a>
+				<span class="url">
+					google.com
+				</span>
 			</li>
 			<li class="item">
 				<div class="time">
-				3:30 PM
+					3:30 PM
 				</div>
 				<a href="#" class="link">
-				https://adblock.com
+					<img src="images/google-favicon.png" class="favicon">
+					Google Search
 				</a>
+				<span class="url">
+					google.com
+				</span>
 			</li>
-
+			</div>
 		</ul>
 		<script type="text/javascript">
-			var previousSelection = "setting";
+			var previousSelection = "browsehistory";
 
 			function setDefaults(){
 				detectTheme();
