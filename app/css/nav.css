@@ -2,7 +2,7 @@
 
 #tab-bar {
   display: flex;
-  height: 3em;
+  height: 2.8em;
   align-items: center;
   /*transition: 0.2s background-color;*/
   max-width: 100vw;
@@ -76,6 +76,11 @@
   /*vertical-align: middle;*/
   margin: 0.75em 0.75em 0.75em 0.75em;
   pointer-events: none;
+}
+
+.tab .tab-title {
+  font: inherit;
+  line-height: inherit;
 }
 
 .tab .tab-close-button {

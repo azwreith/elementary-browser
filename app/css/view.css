@@ -1,7 +1,7 @@
 /* Web View */
 
 #views {
-  height: calc(100vh - 2.3em);
+  height: calc(100vh - 5.8em);
   position: relative;
 }
 
@@ -16,7 +16,8 @@
   padding: 0;
 }
 
-.view .hidden {
+.view:not(.active) {
+  /* Hide non active */
   display: flex;
   visibility: hidden;
 }
