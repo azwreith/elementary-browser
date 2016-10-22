@@ -1,13 +1,45 @@
 const $ = require('jquery')
 
+const searchBar = $('#search-input')
+let activeView, activeTab, activeTabTitle, activeTabIcon, url
+
+// ===========================
+// Utility Functions
+// ===========================
+
+// Set intermediate loading title, favicon & url
+function loadCommit() {
+	activeTabTitle.text(activeView[0].getTitle())
+	activeTabIcon.attr('src', "./images/spinner.gif")
+	searchBar.val(activeView[0].getURL())
+}
+
+// Set final title
+function didFinishLoad() {
+	activeTabTitle.text(activeView[0].getTitle())
+	searchBar.val(activeView[0].getURL())
+}
+
+// Set final favicon
+function pageFaviconUpdated() {
+	// Check if favicons exists else use default favicon
+	$.get(e.favicons[0]).done(() => {
+		activeTabIcon.attr('src', e.favicons[0])
+	}).fail(() => {
+		activeTabIcon.attr('src', "./images/default-favicon.png")
+	})
+}
+
+
+// ===========================
 // Search Bar Function
+// ===========================
 $('#search-input').keydown((e) => {
-	let searchBar = $('#search-input')
-	let activeView = $('.view.active')
-	let activeTab = $('.tab.active')
-	let activeTabTitle = $('.tab.active > .tab-title')
-	let activeTabIcon = $('.tab.active > .tab-icon')
-	let url = searchBar.val()
+	activeView = $('.view.active')
+	activeTab = $('.tab.active')
+	activeTabTitle = $('.tab.active > .tab-title')
+	activeTabIcon = $('.tab.active > .tab-icon')
+	url = searchBar.val()
 
 	// URL should be of the form abc.xyz
 	const urlTest = /^\w+\.\w+$/
@@ -22,31 +54,10 @@ $('#search-input').keydown((e) => {
 			}
 
 			activeView[0].loadURL(url)
-
-			// Set intermediate loading title, favicon & url
-			activeView[0].addEventListener("load-commit", (e) => {
-				activeTabTitle.text(activeView[0].getTitle())
-				activeTabIcon.attr('src', "./images/spinner.gif")
-				searchBar.val(activeView[0].getURL())
-			})
-
-			// Set final title
-			activeView[0].addEventListener("did-finish-load", (e) => {
-				activeTabTitle.text(activeView[0].getTitle())
-				searchBar.val(activeView[0].getURL())
-			})
-
-			// Set final favicon
-			activeView[0].addEventListener("page-favicon-updated", (e) => {
-				// Check if favicons exists
-				$.get(e.favicons[0]).done(() => {
-					activeTabIcon.attr('src', e.favicons[0])
-						// Else use default favicon
-				}).fail(() => {
-					activeTabIcon.attr('src', "./images/default-favicon.png")
-				})
-			})
-
+			activeView[0].addEventListener("load-commit", loadCommit)
+			activeView[0].addEventListener("did-finish-load", didFinishLoad)
+			activeView[0].addEventListener("page-favicon-updated", pageFaviconUpdated)
+			
 		}
 	}
 })
