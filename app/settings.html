@@ -20,6 +20,11 @@
 				font-size: 1.7em;
 				margin-bottom: .7em;
 			}
+			.innercontent{
+				margin-top: 1.1em;
+				width: 50vw;
+				display: none;
+			}
 			.view{
 				margin-right: 1em;
 				cursor: pointer;
@@ -29,11 +34,6 @@
 			}
 			#selected{
 				color: #333;
-			}
-			#setting{
-				margin-top: 1.1em;
-				width: 50vw;
-				display: none;
 			}
 			.heading{
 				font-size: 1.15em;
@@ -50,12 +50,10 @@
 				background: #6F6FFF;
 				border-radius: 4px;
 				transform: translateY(25%);
-				width: 2em;
-				height: 1.2em;
+				padding: 5px 0.5em 5px 0.5em;
 				cursor: pointer;
 				font-size: .9em;
 				text-align: center;
-				padding: 5px;
 				color: #F4F4F4;
 				float: right;
 			}
@@ -72,12 +70,9 @@
 				float: right;
 			}
 			#browsehistory{
-				margin-top: 1.1em;
-				width: 50vw;
 				list-style-type: none;
 				padding-left: 0;
 				font-size: .9em;
-				display: none;
 			}
 			.item{
 				margin-top: 5px;
@@ -103,14 +98,61 @@
 				font-size: .9em;
 				color: #999;
 				display: inline-block;
-				margin-left: 5px;
+				//margin-left: 5px;
 				cursor: default;
 			}
 			.link{
 				display: inline;
 				margin-left: 1.2em;
+				margin-right: 5px;
 				text-decoration: none;
 				color: #333;
+			}
+			#download{
+				list-style-type: none;
+				padding-left: 0;
+				
+			}
+			#download a{
+				text-decoration: none;
+				color: #333;
+			}
+			#folder{
+				margin-right: 10px;
+			}
+			.bgurl{
+				background: #32ab9f;
+				color: #FFF;
+				padding: 5px .5em 5px .5em;
+				display: flex;
+				margin-top: 1.5em;
+				border-radius: 0 0 4px 4px;
+			}
+			.file{
+				float: left;
+				position: relative;
+				transform: translateY(25%);
+				padding: 5px 0.5em 5px 0.5em;
+				cursor: pointer;
+				text-align: center;
+			}
+			.control{
+				display: inline-block;
+				width: 1.5em;
+			}
+			.control img{
+				width: 1em;
+				margin: 5px;
+			}
+			.linkurl{
+				transform: translateY(12%);
+				margin-left: 1em;
+			}
+			.downloaditem{
+				margin-top: 1em;
+				box-shadow: 0 0 5px 0 #dad7d7;
+				border-radius: 4px;
+				background: #F1F1F1;
 			}
 		</style>
 	</head>
@@ -122,9 +164,12 @@
 			<div class="history view" id="browsehistoryTab" onclick="setVisible(this)">
 				History
 			</div>
+			<div class="downloads view" id="downloadTab" onclick="setVisible(this)">
+				Downloads
+			</div>
 		</header>
 		<hr/>
-		<div id="setting">
+		<div id="setting" class="innercontent">
 			<div class="heading">
 				<div class="switch" id="ad" onclick="toggleAdvert(this)">
 				</div>
@@ -154,7 +199,7 @@
 				</div>
 			</div>
 		</div>
-		<ul id="browsehistory">
+		<ul id="browsehistory" class="innercontent">
 			<div>
 			<div class="date">
 				Today
@@ -237,6 +282,36 @@
 				</span>
 			</li>
 			</div>
+		</ul>
+		<ul id="download" class="innercontent">
+			<li class="downloaditem">
+				<div class="switch" id="folder">
+					Show in Folder
+				</div>
+				<a href="somefile.tar.gz" class="file">somefile.tar.gz</a><br/>
+				<div class="bgurl">
+					<div class="control">
+						<img src="./images/pause.png">
+					</div>
+					<div class="linkurl">
+						google.com/somefile.tar.gz
+					</div>
+				</div>
+			</li>
+			<li class="downloaditem">
+				<div class="switch" id="folder">
+					Show in Folder
+				</div>
+				<a href="somefile.tar.gz" class="file">somefile.tar.gz</a><br/>
+				<div class="bgurl">
+					<div class="control">
+						<img src="./images/pause.png">
+					</div>
+					<div class="linkurl">
+						google.com/somefile.tar.gz
+					</div>
+				</div>
+			</li>
 		</ul>
 		<script type="text/javascript">
 			var previousSelection = "browsehistory";
