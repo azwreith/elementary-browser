@@ -1,52 +1,54 @@
+<!doctype html>
 <html>
-	<head>
-		<link rel="stylesheet" href="css/settings.css"/>
-	</head>
-	<body onload="setDefaults()">
-		<header>
-			<div class="settings view" id="settingTab" onclick="setVisible(this)">
-				Settings
+
+<head>
+	<title>Settings</title>
+	<link rel="stylesheet" href="css/settings.css" />
+</head>
+
+<body onload="setDefaults()">
+	<header>
+		<div class="settings view" id="settingTab" onclick="setVisible(this)">
+			Settings
+		</div>
+		<div class="history view" id="browsehistoryTab" onclick="setVisible(this)">
+			History
+		</div>
+		<div class="downloads view" id="downloadTab" onclick="setVisible(this)">
+			Downloads
+		</div>
+	</header>
+	<hr/>
+	<div id="setting" class="innercontent">
+		<div class="heading">
+			<div class="switch" id="ad" onclick="toggleAdvert(this)">
 			</div>
-			<div class="history view" id="browsehistoryTab" onclick="setVisible(this)">
-				History
-			</div>
-			<div class="downloads view" id="downloadTab" onclick="setVisible(this)">
-				Downloads
-			</div>
-		</header>
-		<hr/>
-		<div id="setting" class="innercontent">
-			<div class="heading">
-				<div class="switch" id="ad" onclick="toggleAdvert(this)">
-				</div>
-				AdBlock
-				<div class="subtext">
-					Block advertisements on web pages
-				</div>
-			</div>
-			<div class="heading">
-				<select class="select" id="theme" onchange="changeTheme(this)">
-					<option value="dark">Dark</option>
-					<option value="light">Light</option>
-				</select>
-				Theme
-				<div class="subtext">
-					Choose between Dark and Light theme
-				</div>
-			</div>
-			<div class="heading">
-				<select class="select" id="search" onchange="searchProvider(this)">
-					<option value="google">Google</option>
-					<option value="duckduckgo">DuckDuckGo</option>
-				</select>
-				Search Provider
-				<div class="subtext">
-					Choose between your favourite search provider
-				</div>
+			AdBlock
+			<div class="subtext">
+				Block advertisements on web pages
 			</div>
 		</div>
-		<ul id="browsehistory" class="innercontent">
-			<div>
+		<div class="heading">
+			<select class="select" id="theme" onchange="changeTheme(this)">
+					<option value="dark">Dark</option>
+					<option value="light">Light</option>
+				</select> Theme
+			<div class="subtext">
+				Choose between Dark and Light theme
+			</div>
+		</div>
+		<div class="heading">
+			<select class="select" id="search" onchange="searchProvider(this)">
+					<option value="google">Google</option>
+					<option value="duckduckgo">DuckDuckGo</option>
+				</select> Search Provider
+			<div class="subtext">
+				Choose between your favourite search provider
+			</div>
+		</div>
+	</div>
+	<ul id="browsehistory" class="innercontent">
+		<div>
 			<div class="date">
 				Today
 			</div>
@@ -55,8 +57,7 @@
 					3:30 PM
 				</div>
 				<a href="#" class="link">
-					<img src="images/google-favicon.png" class="favicon">
-					Google Search
+					<img src="images/google-favicon.png" class="favicon"> Google Search
 				</a>
 				<span class="url">
 					google.com
@@ -67,8 +68,7 @@
 					3:30 PM
 				</div>
 				<a href="#" class="link">
-					<img src="images/google-favicon.png" class="favicon">
-					Google Search
+					<img src="images/google-favicon.png" class="favicon"> Google Search
 				</a>
 				<span class="url">
 					google.com
@@ -79,15 +79,14 @@
 					3:30 PM
 				</div>
 				<a href="#" class="link">
-					<img src="images/google-favicon.png" class="favicon">
-					Google Search
+					<img src="images/google-favicon.png" class="favicon"> Google Search
 				</a>
 				<span class="url">
 					google.com
 				</span>
 			</li>
-			</div>
-			<div>
+		</div>
+		<div>
 			<div class="date">
 				Yesterday
 			</div>
@@ -96,8 +95,7 @@
 					3:30 PM
 				</div>
 				<a href="#" class="link">
-					<img src="images/google-favicon.png" class="favicon">
-					Google Search
+					<img src="images/google-favicon.png" class="favicon"> Google Search
 				</a>
 				<span class="url">
 					google.com
@@ -108,8 +106,7 @@
 					3:30 PM
 				</div>
 				<a href="#" class="link">
-					<img src="images/google-favicon.png" class="favicon">
-					Google Search
+					<img src="images/google-favicon.png" class="favicon"> Google Search
 				</a>
 				<span class="url">
 					google.com
@@ -120,45 +117,45 @@
 					3:30 PM
 				</div>
 				<a href="#" class="link">
-					<img src="images/google-favicon.png" class="favicon">
-					Google Search
+					<img src="images/google-favicon.png" class="favicon"> Google Search
 				</a>
 				<span class="url">
 					google.com
 				</span>
 			</li>
+		</div>
+	</ul>
+	<ul id="download" class="innercontent">
+		<li class="downloaditem">
+			<div class="switch" id="folder">
+				Show in Folder
 			</div>
-		</ul>
-		<ul id="download" class="innercontent">
-			<li class="downloaditem">
-				<div class="switch" id="folder">
-					Show in Folder
+			<a href="somefile.tar.gz" class="file">somefile.tar.gz</a><br/>
+			<div class="bgurl">
+				<div class="control">
+					<img src="./images/pause.png">
 				</div>
-				<a href="somefile.tar.gz" class="file">somefile.tar.gz</a><br/>
-				<div class="bgurl">
-					<div class="control">
-						<img src="./images/pause.png">
-					</div>
-					<div class="linkurl">
-						google.com/somefile.tar.gz
-					</div>
+				<div class="linkurl">
+					google.com/somefile.tar.gz
 				</div>
-			</li>
-			<li class="downloaditem">
-				<div class="switch" id="folder">
-					Show in Folder
+			</div>
+		</li>
+		<li class="downloaditem">
+			<div class="switch" id="folder">
+				Show in Folder
+			</div>
+			<a href="somefile.tar.gz" class="file">somefile.tar.gz</a><br/>
+			<div class="bgurl">
+				<div class="control">
+					<img src="./images/pause.png">
 				</div>
-				<a href="somefile.tar.gz" class="file">somefile.tar.gz</a><br/>
-				<div class="bgurl">
-					<div class="control">
-						<img src="./images/pause.png">
-					</div>
-					<div class="linkurl">
-						google.com/somefile.tar.gz
-					</div>
+				<div class="linkurl">
+					google.com/somefile.tar.gz
 				</div>
-			</li>
-		</ul>
-		<script src="js/settings.js"></script>
-	</body>
+			</div>
+		</li>
+	</ul>
+	<script src="js/settings.js"></script>
+</body>
+
 </html>
