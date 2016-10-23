@@ -16,7 +16,6 @@ $('#search-input').keydown((e) => {
 	const urlTest = /^\w+\.\w+$/
 	const urlPrefixTest = /^[a-zA-Z]+:\/\//
 
-
 	url = searchBar.val()
 
 	if (e.keyCode == 13) {
@@ -40,7 +39,8 @@ $('#add-tab-button').click(() => {
 
 	// Create a tab
 	$('<li class="tab"> \
-		<img class="tab-icon" src="./images/default-favicon.png"/>New Tab \
+		<img class="tab-icon" src="./images/default-favicon.png"/> \
+		<div class="tab-title">New Tab</div> \
 		<i class="fa fa-times tab-close-button" title="Close Tab"></i> \
 	</li>').appendTo($('#tabs'))
 	$('.tab:last').addClass('active')
@@ -73,7 +73,7 @@ function addWebViewListner() {
 	})
 
 	// Set final favicon
-	activeView[0].addEventListener("page-favicon-updated", () => {
+	activeView[0].addEventListener("page-favicon-updated", (e) => {
 		// Check if favicons exists else use default favicon
 		$.get(e.favicons[0]).done(() => {
 			activeTabIcon.attr('src', e.favicons[0])
@@ -86,6 +86,11 @@ function addWebViewListner() {
 	activeView[0].addEventListener("did-finish-load", () => {
 		activeTabTitle.text(activeView[0].getTitle())
 		searchBar.val(activeView[0].getURL())
+
+		// If new tab page, empty search bar
+		if (activeView[0].getURL() == "file:///home/azwreith/Documents/GitHub/elementary-browser/app/new-tab.html") {
+			searchBar.val("")
+		}
 	})
 
 }
