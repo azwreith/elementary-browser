@@ -22,13 +22,20 @@ $('#search-input').keydown((e) => {
 	url = searchBar.val()
 
 	if (e.keyCode == 13) {
+
+		//If it's a url load it
 		if (urlTest.test(url)) {
 			//Add http:// prefix if no prefix is there
 			if (!urlPrefixTest.test(url)) {
 				url = 'http://' + url
 			}
-			activeView[0].loadURL(url)
+		} else {
+			// Else google it for now
+			url = 'https://www.google.com/search?q=' + url
 		}
+
+		activeView[0].loadURL(url)
+
 	}
 })
 
@@ -119,17 +126,15 @@ function addWebViewListner() {
 	// Set intermediate loading favicon & url
 	activeView[0].addEventListener('load-commit', () => {
 		// If not local url
-		if(!/^file:\/\//.test(activeView[0].getURL())) {
+		if (!/^file:\/\//.test(activeView[0].getURL())) {
 			activeTabIcon.attr('src', './images/spinner.gif')
 			searchBar.val(activeView[0].getURL())
 		}
 	})
 
 	// Set title whenever it's updated
-	activeView[0].addEventListener('load-commit', () => {
-		if(!/^file:\/\//.test(activeView[0].getURL())) {
-			activeTabTitle.text(activeView[0].getTitle())
-		}
+	activeView[0].addEventListener('page-title-updated', () => {
+		activeTabTitle.text(activeView[0].getTitle())
 	})
 
 	// Set final favicon
@@ -144,7 +149,6 @@ function addWebViewListner() {
 
 	// Set final url
 	activeView[0].addEventListener('did-finish-load', () => {
-		activeTabTitle.text(activeView[0].getTitle())
 		searchBar.val(activeView[0].getURL())
 
 		// If new tab, empty search bar and set default favicon
