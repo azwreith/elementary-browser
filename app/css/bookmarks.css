@@ -1,0 +1,114 @@
+@font-face {
+    font-family: Roboto;
+    src: url(../fonts/Roboto.woff2);
+}
+body{
+	font-family: "Roboto";
+	background: #F4F4F4;
+	margin: 0;
+}
+.nav{
+	position: relative;
+	box-shadow: 0 2px 90px 0 #dad7d7;
+	height: 6vh;
+	width: 100vw;
+	top: 0;
+	left: 0;
+}
+.icon{
+	height: 4.8vh;
+	width: 4vh;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}
+#nav-icon{
+	height: 6vh;
+	line-height: 6vh;
+	position: absolute;
+	left: 5px;
+}
+
+nav {
+	text-align: center;
+	background: white;
+	margin: 0;
+}
+nav a {
+	text-decoration: none;
+	color: #666666;
+	margin: 0 6px;
+	height: 6vh;
+	line-height: 6vh;
+	top: 0;
+	display: inline-block;
+	font-size: .95em;
+	transform: translateY(-2px);
+	}
+#selected{
+	color: black;
+	border-top-style: solid;
+	border-color: #2D2D2D;
+}
+.main{
+	width: 100%;
+}
+.bookmark{
+	display: inline-block;
+	box-shadow: 0 0 5px 0 #dad7d7;
+	margin: 10px;
+	background-color: white;
+	position: relative;
+	border-radius: 2px;
+	width: 8em;
+	height: 10em;
+
+
+}			.bookmark:hover{
+	box-shadow: 0 0 10px 0 #aba9a9;
+}
+.main a{
+	text-decoration: none;
+}
+.thumbnail{
+
+	position: relative;
+	box-shadow: 0 1px 1px 0 #dad7d7; 
+	margin: 0;
+	width: 8em;
+	height: 7.2em;
+}
+.thumbnail img{
+	width: 100%;
+}
+.favicon{
+	position: relative;
+	background: white;
+	top: -1.1em;
+	left: 2.8em;
+	border-radius: 11em;
+	width: 2em;
+	height: 2em;
+	border: 2px solid;
+	border-color: #898989;
+}
+.favicon img{
+	position: relative;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 80%;
+}
+.title{
+	position: relative;
+	font-size: .8em;
+	line-height: 2em;
+	margin: auto;
+	width: 100%;
+	color: #2D2D2D;
+	top: -1.25em;
+	text-align: center;
+	white-space: nowrap;
+	overflow: hidden;
+
+}

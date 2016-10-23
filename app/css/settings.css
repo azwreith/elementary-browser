@@ -1,0 +1,153 @@
+@font-face {
+    font-family: Roboto;
+    src: url(../fonts/Roboto.woff2);
+}
+body{
+	margin: 5em;
+	color: #333;
+	font-family: "Roboto";
+	width: 50vw;
+}
+hr{
+	background: #999;
+	align-self: left;
+	width: 50vw;
+}
+header{
+	font-size: 1.7em;
+	margin-bottom: .7em;
+}
+.innercontent{
+	margin-top: 1.1em;
+	width: 50vw;
+	display: none;
+}
+.view{
+	margin-right: 1em;
+	cursor: pointer;
+	display: inline-block;
+	color: #999;
+	//margin-left: 1em;
+}
+#selected{
+	color: #333;
+}
+.heading{
+	font-size: 1.15em;
+	margin-bottom: 1em;
+	position: relative;
+}
+.subtext{
+	font-size: .85em;
+	margin-top: .3em;
+	color: #999;
+}
+.switch{
+	position: relative;
+	background: #6F6FFF;
+	border-radius: 4px;
+	transform: translateY(25%);
+	padding: 5px 0.5em 5px 0.5em;
+	cursor: pointer;
+	font-size: .9em;
+	text-align: center;
+	color: #F4F4F4;
+	float: right;
+}
+.select{
+	position: relative;
+	border-radius: 4px;
+	transform: translateY(25%);
+	font-family: "Roboto";
+	background: none;
+	cursor: pointer;
+	font-size: .8em;
+	text-align: center;
+	padding: 5px 2em 5px 0.5em;
+	float: right;
+}
+#browsehistory{
+	list-style-type: none;
+	padding-left: 0;
+	font-size: .9em;
+}
+.item{
+	margin-top: 5px;
+	margin-left: 1.8em;
+}
+.date{
+	font-size: 1.1em;
+	margin-left: .5em;
+	margin-top: 1em;
+	margin-bottom: .5em;
+}
+.time{
+	display: inline;
+	color: #999;
+}
+.favicon{
+	height: 1em;
+	display: inline-flex;
+	margin-right: 3px;
+	vertical-align: baseline;
+}
+.url{
+	font-size: .9em;
+	color: #999;
+	display: inline-block;
+	//margin-left: 5px;
+	cursor: default;
+}
+.link{
+	display: inline;
+	margin-left: 1.2em;
+	margin-right: 5px;
+	text-decoration: none;
+	color: #333;
+}
+#download{
+	list-style-type: none;
+	padding-left: 0;
+	
+}
+#download a{
+	text-decoration: none;
+	color: #333;
+}
+#folder{
+	margin-right: 10px;
+}
+.bgurl{
+	background: #32ab9f;
+	color: #FFF;
+	padding: 5px .5em 5px .5em;
+	display: flex;
+	margin-top: 1.5em;
+	border-radius: 0 0 4px 4px;
+}
+.file{
+	float: left;
+	position: relative;
+	transform: translateY(25%);
+	padding: 5px 0.5em 5px 0.5em;
+	cursor: pointer;
+	text-align: center;
+}
+.control{
+	display: inline-block;
+	width: 1.5em;
+}
+.control img{
+	width: 1em;
+	margin: 5px;
+}
+.linkurl{
+	transform: translateY(12%);
+	margin-left: 1em;
+}
+.downloaditem{
+	margin-top: 1em;
+	box-shadow: 0 0 5px 0 #dad7d7;
+	border-radius: 4px;
+	background: #F1F1F1;
+}
