@@ -71,7 +71,7 @@ $('#settings-button').click(() => {
 
 	// Create a tab
 	$('<li class="tab"> \
-		<img class="tab-icon" src="./images/default-favicon.png"/> \
+		<img class="tab-icon" src="./images/settings-favicon.png"/> \
 		<div class="tab-title">Settings</div> \
 		<i class="fa fa-times tab-close-button" title="Close Tab"></i> \
 	</li>').appendTo($('#tabs'))
@@ -116,13 +116,19 @@ $('#home-button').click(() => {
 //Add WebView Listeners
 function addWebViewListner() {
 
-	// Set intermediate loading title, favicon & url
+	// Set intermediate loading favicon & url
 	activeView[0].addEventListener('load-commit', () => {
 		// If not local url
 		if(!/^file:\/\//.test(activeView[0].getURL())) {
-			activeTabTitle.text(activeView[0].getTitle())
 			activeTabIcon.attr('src', './images/spinner.gif')
 			searchBar.val(activeView[0].getURL())
+		}
+	})
+
+	// Set title whenever it's updated
+	activeView[0].addEventListener('load-commit', () => {
+		if(!/^file:\/\//.test(activeView[0].getURL())) {
+			activeTabTitle.text(activeView[0].getTitle())
 		}
 	})
 
@@ -136,7 +142,7 @@ function addWebViewListner() {
 		})
 	})
 
-	// Set final title & url
+	// Set final url
 	activeView[0].addEventListener('did-finish-load', () => {
 		activeTabTitle.text(activeView[0].getTitle())
 		searchBar.val(activeView[0].getURL())
