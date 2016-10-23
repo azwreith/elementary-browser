@@ -1,56 +1,59 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<title>Elementary Browser</title>
-		<link rel="stylesheet" href="css/font-awesome.min.css"/>
-		<link rel="stylesheet" href="css/main.css"/>
-		<link rel="stylesheet" href="css/nav.css"/>
-		<link rel="stylesheet" href="css/view.css"/>
-	</head>
-	<body>
-		<div id="container">
 
-			<!-- Top Nav -->
-			<div id="top-nav">
+<head>
+	<meta charset="UTF-8">
+	<title>Elementary Browser</title>
+	<link rel="stylesheet" href="css/font-awesome.min.css" />
+	<link rel="stylesheet" href="css/main.css" />
+	<link rel="stylesheet" href="css/nav.css" />
+	<link rel="stylesheet" href="css/view.css" />
+</head>
 
-				<!-- Tab Bar -->
-				<div id="tab-bar">
-					<ul id="tabs">
+<body>
+	<div id="container">
 
-						<li class="tab active">
-							<img class="tab-icon" src="https://www.google.com/favicon.ico"/>
-							<div class="tab-title">Google</div>
-							<i class="fa fa-times tab-close-button" title="Close Tab"></i>
-						</li>
+		<!-- Top Nav -->
+		<div id="top-nav">
 
-					</ul>
-					<i id="add-tab-button" class="fa fa-plus new-tab-button" title="New Tab"></i>
-				</div>
+			<!-- Tab Bar -->
+			<div id="tab-bar">
+				<ul id="tabs">
 
-				<!-- Search Bar -->
-				<div id="search-bar">
-					<i id="back-button" class="fa fa-lg fa-arrow-left search-bar-button" title="Back"></i>
-					<i id="forward-button" class="fa fa-lg fa-arrow-right search-bar-button" title="Forward"></i>
-					<i id="refresh-button" class="fa fa-lg fa-rotate-right search-bar-button" title="Refresh"></i>
-					<i id="home-button" class="fa fa-lg fa-home search-bar-button" title="Home"></i>
-					<div id="search">
-						<label for="search-input">
-							<i class="fa fa-search"></i>
-						</label>
-						<input id="search-input"/>
-					</div>
-					<i id="settings-button" class="fa fa-lg fa-cog search-bar-button" title="Home"></i>
-				</div>
+					<li class="tab active">
+						<img class="tab-icon" src="./images/default-favicon.png" />
+						<div class="tab-title">New Tab</div>
+						<i class="fa fa-times tab-close-button" title="Close Tab"></i>
+					</li>
 
+				</ul>
+				<i id="add-tab-button" class="fa fa-plus new-tab-button" title="New Tab"></i>
 			</div>
 
-			<!-- View -->
-			<div id="views">
-				<webview class="view active" src="http://google.com"></webview>
+			<!-- Search Bar -->
+			<div id="search-bar">
+				<i id="back-button" class="fa fa-lg fa-arrow-left search-bar-button" title="Back"></i>
+				<i id="forward-button" class="fa fa-lg fa-arrow-right search-bar-button" title="Forward"></i>
+				<i id="refresh-button" class="fa fa-lg fa-rotate-right search-bar-button" title="Refresh"></i>
+				<i id="home-button" class="fa fa-lg fa-home search-bar-button" title="Home"></i>
+				<div id="search">
+					<label for="search-input">
+							<i class="fa fa-search"></i>
+						</label>
+					<input id="search-input" />
+				</div>
+				<i id="settings-button" class="fa fa-lg fa-cog search-bar-button" title="Home"></i>
 			</div>
 
 		</div>
-		<script src="js/renderer.js"></script>
-	</body>
+
+		<!-- View -->
+		<div id="views">
+			<webview class="view active" src="./new-tab.html"></webview>
+		</div>
+
+	</div>
+	<script src="js/renderer.js"></script>
+</body>
+
 </html>
