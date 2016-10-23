@@ -8,6 +8,9 @@ let activeView = $('.view.active'),
 	activeTabIcon = $('.tab.active > .tab-icon'),
 	url
 
+// Temporary for default html tab
+addWebViewListner()
+
 // ===========================
 // Search Bar Function
 // ===========================
@@ -88,8 +91,20 @@ $('#settings-button').click(() => {
 })
 
 // ===========================
-// Home Button Function
+// Back, Forward, Reload & Home Button Functions
 // ===========================
+$('#back-button').click(() => {
+	activeView[0].goBack()
+})
+
+$('#forward-button').click(() => {
+	activeView[0].goForward()
+})
+
+$('#reload-button').click(() => {
+	activeView[0].reload()
+})
+
 $('#home-button').click(() => {
 	activeView[0].loadURL(`file://${__dirname}/new-tab.html`)
 })
