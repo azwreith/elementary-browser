@@ -98,6 +98,33 @@ $('#settings-button').click(() => {
 })
 
 // ===========================
+// Close Button Function
+// ===========================
+$(document).on('click', '.tab-close-button', (e) => {
+	console.log("Close clicked")
+	// Get target tab
+	let targetTab = $(e.target).parent()
+	// Get tab index
+	let targetTabIndex = targetTab.index()
+	// Use the index to get target view
+	let targetView = $(`.view:eq(${targetTabIndex})`)
+
+	// DESTROY!
+	targetTab.remove()
+	targetView.remove()
+
+	// Set last tab and view as active
+	$('.view:last').addClass('active')
+	$('.tab:last').addClass('active')
+	activeView = $('.view.active')
+	activeTab = $('.tab.active')
+	activeTabTitle = $('.tab.active > .tab-title')
+	activeTabIcon = $('.tab.active > .tab-icon')
+	searchBar.val(activeView[0].getURL())
+
+})
+
+// ===========================
 // Back, Forward, Reload & Home Button Functions
 // ===========================
 $('#back-button').click(() => {

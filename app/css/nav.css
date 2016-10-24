@@ -48,15 +48,15 @@
 
 .tab {
   flex: 1;
-  min-width: 125px;
+  min-width: 100px;
   transition: .15s min-width, 0.2s transform, 0.3s background-color ease-in-out;
   padding: 0 1em;
   font-size: 0.8em;
   line-height: 4em;
   height: 4em;
   overflow: hidden;
-  word-break: break-all;
   background-color: rgba(200, 200, 200, 0.2);
+  display: flex;
   /*padding: 0 0.66em;
   vertical-align: middle;
   box-sizing: content-box;
@@ -71,6 +71,7 @@
   background-color: rgba(255, 255, 255, 1);
 }
 
+
 /*.tab.active:hover {
   background-color: rgba(200, 200, 200, 0.1);
 }*/
@@ -84,9 +85,13 @@
 }
 
 .tab .tab-title {
+  flex: 1;
   font: inherit;
   line-height: inherit;
   display: inline-block;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .tab .tab-close-button {
@@ -104,8 +109,8 @@
 }
 
 .tab:hover .tab-close-button {
-  display: inline-block;
   opacity: 1;
+  display: inline-block;
 }
 
 .new-tab-button {
@@ -117,6 +122,7 @@
 .new-tab-button:hover {
   background-color: rgba(200, 200, 200, 0.1);
 }
+
 
 /*.new-tab-button + .new-tab-button {
 	padding-left: 0.5em;
