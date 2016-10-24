@@ -101,7 +101,7 @@ $('#settings-button').click(() => {
 // Close Button Function
 // ===========================
 $(document).on('click', '.tab-close-button', (e) => {
-	console.log("Close clicked")
+	console.log("Fired")
 	// Get target tab
 	let targetTab = $(e.target).parent()
 	// Get tab index
@@ -122,10 +122,38 @@ $(document).on('click', '.tab-close-button', (e) => {
 	activeTabIcon = $('.tab.active > .tab-icon')
 	searchBar.val(activeView[0].getURL())
 
+	// Stop propogation to parent
+	return false
 })
 
 // ===========================
-// Back, Forward, Reload & Home Button Functions
+// Switch Tab Function
+// ===========================
+$(document).on('click', '#tabs .tab', (e) => {
+	console.log("Switch")
+	// Get target tab
+	let targetTab = $(e.target)
+	// Get tab index
+	let targetTabIndex = targetTab.index()
+	// Use the index to get target view
+	let targetView = $(`.view:eq(${targetTabIndex})`)
+
+	// Switch the tabs
+	activeView.removeClass('active')
+	activeTab.removeClass('active')
+	targetView.addClass('active')
+	targetTab.addClass('active')
+	// Set new actives
+	activeView = targetView
+	activeTab = targetTab
+	activeTabTitle = $('.tab.active > .tab-title')
+	activeTabIcon = $('.tab.active > .tab-icon')
+	searchBar.val(activeView[0].getURL())
+
+})
+
+// ===========================
+// Back, Forward, Reload, Home, Bookmark Button Functions
 // ===========================
 $('#back-button').click(() => {
 	activeView[0].goBack()
@@ -141,6 +169,10 @@ $('#reload-button').click(() => {
 
 $('#home-button').click(() => {
 	activeView[0].loadURL(`file://${__dirname}/new-tab.html`)
+})
+
+$('#bookmarks-button').click(() => {
+	activeView[0].loadURL(`file://${__dirname}/bookmarks.html`)
 })
 
 // ===========================

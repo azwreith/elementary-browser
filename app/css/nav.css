@@ -92,6 +92,7 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+  pointer-events: none;
 }
 
 .tab .tab-close-button {
@@ -185,6 +186,6 @@
   background-color: rgba(200, 200, 200, 0.1);
 }
 
-#settings-button {
+.book-setting {
   padding: 1em;
 }
