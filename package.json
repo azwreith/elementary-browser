@@ -5,7 +5,7 @@
   "main": "app/main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "electron ."
+    "start": "nodemon --exec 'electron .'"
   },
   "repository": {
     "type": "git",
@@ -22,7 +22,8 @@
   },
   "homepage": "https://github.com/azwreith/elementary-browser#readme",
   "devDependencies": {
-    "electron": "^1.4.2"
+    "electron": "^1.4.2",
+    "nodemon": "^1.11.0"
   },
   "dependencies": {
     "jquery": "^3.1.1"
