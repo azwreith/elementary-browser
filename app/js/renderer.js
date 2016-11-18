@@ -16,7 +16,7 @@ addWebViewListner()
 // ===========================
 $('#search-input').keydown((e) => {
 	// URL should be of the form abc.xyz
-	const urlTest = /^\w+\./
+	const urlTest = /^((https?|ftp):(\/\/)?)?([\w\d-]+\.)+\w{2,}(:\d{4})?(\/([\w\d\-\.\_]+\/?)*([\w\d]*\?[\w\d]*\=[\w\d]*)(\&[\w\d]*\=[\w\d]*)*)?$/
 	const urlPrefixTest = /^[a-zA-Z]+:\/\//
 
 	url = searchBar.val()
