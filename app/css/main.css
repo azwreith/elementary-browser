@@ -1,11 +1,15 @@
 /* Main */
+@font-face {
+  font-family: Roboto;
+  src: url(../fonts/Roboto.woff2);
+}
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-size: 16px;
-  font-family: '.SFNSText-Regular', 'Helvetica Neue', 'Arial', sans-serif;
+  font-family: "Roboto";
 }
 
 html, body {
